@@ -13,7 +13,7 @@ You can view a running example at [http://stencil-paged-dataset.surge.sh/](http:
 To start this project, clone into a new directory:
 
 ```bash
-git clone https://github.com/cnunciato/stencil-paged-dataset-example.git my-app
+git clone https://github.com/cnunciato/stencil-paged-dataset-example.git
 cd stencil-paged-dataset-example
 git remote rm origin
 ```
