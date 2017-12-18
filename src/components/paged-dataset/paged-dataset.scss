@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  line-height: 18px;
+
+  .container {
+    height: 348px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    overflow-y: scroll;
+  }
+
+  cdn-paginator {
+    margin-top: 8px;
+  }
+
+  table  {
+    width: 100%;
+
+    th, td {
+      text-align: left;
+      border: 1px solid #fafafa;
+      padding: 4px;
+    };
+  }
+}

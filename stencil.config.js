@@ -1,7 +1,12 @@
 exports.config = {
   bundles: [
-    { components: ['my-app', 'app-home'] },
-    { components: ['app-profile'] }
+    {
+      components: [
+        'cdn-home',
+        'cdn-paged-dataset',
+        'cdn-paginator'
+      ]
+    }
   ],
   collections: [
     { name: '@stencil/router' }

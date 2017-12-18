@@ -6,34 +6,31 @@
 
 import '@stencil/router';
 
-import {
-  MatchResults,
-} from '@stencil/router';
 
 import {
-  AppHome as AppHome
-} from './components/app-home/app-home';
+  Home as CdnHome
+} from './components/home/home';
 
 declare global {
-  interface HTMLAppHomeElement extends AppHome, HTMLElement {
+  interface HTMLCdnHomeElement extends CdnHome, HTMLElement {
   }
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
+  var HTMLCdnHomeElement: {
+    prototype: HTMLCdnHomeElement;
+    new (): HTMLCdnHomeElement;
   };
   interface HTMLElementTagNameMap {
-    "app-home": HTMLAppHomeElement;
+    "cdn-home": HTMLCdnHomeElement;
   }
   interface ElementTagNameMap {
-    "app-home": HTMLAppHomeElement;
+    "cdn-home": HTMLCdnHomeElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-home": JSXElements.AppHomeAttributes;
+      "cdn-home": JSXElements.CdnHomeAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppHomeAttributes extends HTMLAttributes {
+    export interface CdnHomeAttributes extends HTMLAttributes {
       
     }
   }
@@ -41,61 +38,63 @@ declare global {
 
 
 import {
-  AppProfile as AppProfile
-} from './components/app-profile/app-profile';
+  PagedDataset as CdnPagedDataset
+} from './components/paged-dataset/paged-dataset';
 
 declare global {
-  interface HTMLAppProfileElement extends AppProfile, HTMLElement {
+  interface HTMLCdnPagedDatasetElement extends CdnPagedDataset, HTMLElement {
   }
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
+  var HTMLCdnPagedDatasetElement: {
+    prototype: HTMLCdnPagedDatasetElement;
+    new (): HTMLCdnPagedDatasetElement;
   };
   interface HTMLElementTagNameMap {
-    "app-profile": HTMLAppProfileElement;
+    "cdn-paged-dataset": HTMLCdnPagedDatasetElement;
   }
   interface ElementTagNameMap {
-    "app-profile": HTMLAppProfileElement;
+    "cdn-paged-dataset": HTMLCdnPagedDatasetElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-profile": JSXElements.AppProfileAttributes;
+      "cdn-paged-dataset": JSXElements.CdnPagedDatasetAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppProfileAttributes extends HTMLAttributes {
+    export interface CdnPagedDatasetAttributes extends HTMLAttributes {
       
-        match?: MatchResults
     }
   }
 }
 
 
 import {
-  MyApp as MyApp
-} from './components/my-app/my-app';
+  Paginator as CdnPaginator
+} from './components/paginator/paginator';
 
 declare global {
-  interface HTMLMyAppElement extends MyApp, HTMLElement {
+  interface HTMLCdnPaginatorElement extends CdnPaginator, HTMLElement {
   }
-  var HTMLMyAppElement: {
-    prototype: HTMLMyAppElement;
-    new (): HTMLMyAppElement;
+  var HTMLCdnPaginatorElement: {
+    prototype: HTMLCdnPaginatorElement;
+    new (): HTMLCdnPaginatorElement;
   };
   interface HTMLElementTagNameMap {
-    "my-app": HTMLMyAppElement;
+    "cdn-paginator": HTMLCdnPaginatorElement;
   }
   interface ElementTagNameMap {
-    "my-app": HTMLMyAppElement;
+    "cdn-paginator": HTMLCdnPaginatorElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-app": JSXElements.MyAppAttributes;
+      "cdn-paginator": JSXElements.CdnPaginatorAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyAppAttributes extends HTMLAttributes {
-      
+    export interface CdnPaginatorAttributes extends HTMLAttributes {
+      itemCount?: number;
+      page?: number;
+      pageSize?: number;
+      pageSizeOptions?: number[];
     }
   }
 }

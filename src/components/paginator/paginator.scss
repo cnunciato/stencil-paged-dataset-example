@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  border: 1px solid #eee;
+  padding: 4px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pages {
+    margin-right: auto;
+
+    &, a {
+      border-radius: 2px;
+    }
+  }
+
+  .counts {
+    margin-right: 18px;
+  }
+
+  .size {
+    margin-right: 4px;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid #fafafa;
+    margin-right: 4px;
+    transition: all 0.1s linear;
+
+    &:hover {
+      border-color: #aaa;
+    }
+
+    &.active {
+      color: #00f;
+      border-color: #00f;
+    }
+  }
+}
