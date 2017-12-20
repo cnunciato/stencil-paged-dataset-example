@@ -9,7 +9,7 @@
     align-items: center;
   }
 
-  .pages {
+  .pages, .prev, .next {
     margin-right: auto;
 
     &, a {
@@ -41,6 +41,15 @@
     &.active {
       color: #00f;
       border-color: #00f;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: #bbb;
+
+      &:hover {
+        border-color: #fafafa;
+      }
     }
   }
 }

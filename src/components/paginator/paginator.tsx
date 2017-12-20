@@ -36,12 +36,30 @@ export class Paginator {
 
       return (
         <div>
+          <span class="prev">
+            <a
+              class={ this.page === 0 ? 'disabled' : ''}
+              onClick={ event => (this.page === 0 ? event.preventDefault() : this.handleSelect(event, this.page - 1)) }>
+              Previous
+            </a>
+          </span>
           <span class="pages">
             {
               pages.map(index =>
-                <a class={this.page === index ? 'active' : ''} onClick={ event => this.handleSelect(event, index) }>{ index + 1 }</a>
+                <a
+                  class={this.page === index ? 'active' : ''}
+                  onClick={ event => this.handleSelect(event, index) }>
+                  { index + 1 }
+                </a>
               )
             }
+          </span>
+          <span class="next">
+            <a
+              class={ this.page === pages.length - 1 ? 'disabled' : ''}
+              onClick={ event => (this.page === pages.length - 1 ? event.preventDefault() : this.handleSelect(event, this.page + 1)) }>
+              Next
+            </a>
           </span>
           <span class="counts">
             {start} - {this.page === pages[pages.length - 1] ? this.itemCount : end} of {this.itemCount}
