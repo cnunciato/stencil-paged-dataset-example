@@ -28,12 +28,12 @@ export class Paginator {
     }
   }
 
-  handleSelect(event: UIEvent, index: number) {
+  private handleSelect(event: UIEvent, index: number) {
     event.preventDefault();
     this.pageChanged.emit(index);
   }
 
-  handlePageSizeChange(event) {
+  private handlePageSizeChange(event) {
     this.sizeChanged.emit(Number(event.currentTarget.value));
   }
 
