@@ -14,8 +14,22 @@ export class Paginator {
   @Event() pageChanged: EventEmitter;
   @Event() sizeChanged: EventEmitter;
 
+  private pageCount: number = 0;
+
+  private handlePrevious(event) {
+    if (this.page !== 0) {
+      this.handleSelect(event, this.page - 1)
+    }
+  }
+
+  private handleNext(event) {
+    if (this.page !== this.pageCount - 1) {
+      this.handleSelect(event, this.page + 1);
+    }
+  }
+
   handleSelect(event: UIEvent, index: number) {
-    event.preventDefault;
+    event.preventDefault();
     this.pageChanged.emit(index);
   }
 
@@ -34,32 +48,36 @@ export class Paginator {
         pages.push(i);
       }
 
+      this.pageCount = pages.length;
+
       return (
         <div>
-          <span class="prev">
-            <a
-              class={ this.page === 0 ? 'disabled' : ''}
-              onClick={ event => (this.page === 0 ? event.preventDefault() : this.handleSelect(event, this.page - 1)) }>
-              Previous
-            </a>
-          </span>
           <span class="pages">
-            {
-              pages.map(index =>
-                <a
-                  class={this.page === index ? 'active' : ''}
-                  onClick={ event => this.handleSelect(event, index) }>
-                  { index + 1 }
-                </a>
-              )
-            }
-          </span>
-          <span class="next">
-            <a
-              class={ this.page === pages.length - 1 ? 'disabled' : ''}
-              onClick={ event => (this.page === pages.length - 1 ? event.preventDefault() : this.handleSelect(event, this.page + 1)) }>
-              Next
-            </a>
+            <span>
+              <a
+                class={ this.page === 0 ? 'disabled' : ''}
+                onClick={ event => this.handlePrevious(event)}>
+                Previous
+              </a>
+            </span>
+            <span>
+              {
+                pages.map(index =>
+                  <a
+                    class={this.page === index ? 'active' : ''}
+                    onClick={ event => this.handleSelect(event, index) }>
+                    { index + 1 }
+                  </a>
+                )
+              }
+            </span>
+            <span>
+              <a
+                class={ this.page === pages.length - 1 ? 'disabled' : ''}
+                onClick={ event => this.handleNext(event) }>
+                Next
+              </a>
+            </span>
           </span>
           <span class="counts">
             {start} - {this.page === pages[pages.length - 1] ? this.itemCount : end} of {this.itemCount}

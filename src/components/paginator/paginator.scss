@@ -9,7 +9,7 @@
     align-items: center;
   }
 
-  .pages, .prev, .next {
+  .pages {
     margin-right: auto;
 
     &, a {
@@ -33,6 +33,7 @@
     border: 1px solid #fafafa;
     margin-right: 4px;
     transition: all 0.1s linear;
+    user-select: none;
 
     &:hover {
       border-color: #aaa;
